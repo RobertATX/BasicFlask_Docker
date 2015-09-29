@@ -51,11 +51,7 @@ run ln -s /2Weeks/nginx-app.conf /etc/nginx/sites-enabled/
 run ln -s /2Weeks/supervisor-app.conf /etc/supervisor/conf.d/
 
 # Get pip to download and install requirements:
-RUN pip install -r /2Weeks/requirements.txt
-
-#Run the setup script from Dave
-#RUN chmod +x /2Weeks/scripts/bootstrap.sh
-
+RUN pip install -r /BasicFlask_Docker/requirements.txt
 
 #Rerun the Update to resolve install issues
 #RUN apt-get update -f
@@ -64,8 +60,4 @@ RUN pip install -r /2Weeks/requirements.txt
 EXPOSE 80
 
 # Set the default command to execute when creating a new container
-#CMD ["/usr/sbin/sshd", "-D"] && python twoweeks.py
 CMD ["supervisord", "-n"]
-
-##CMD cd /2Weeks && git pull && newrelic-admin run-program python runserver.py
-##CMD cd /2Weeks && git pull && python wsgi.py
