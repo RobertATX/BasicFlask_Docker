@@ -37,7 +37,6 @@ RUN apt-get install -y software-properties-common python-software-properties
 RUN add-apt-repository ppa:nginx/stable
 #RUN apt-get install mysql-client
 
-
 # Set up DevUser
 RUN useradd dlkrbd -u 1000 -s /bin/bash --no-create-home
 RUN gpasswd -a dlkrbd sudo
