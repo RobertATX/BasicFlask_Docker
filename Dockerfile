@@ -42,7 +42,7 @@ RUN useradd dlkrbd -u 1000 -s /bin/bash --no-create-home
 RUN gpasswd -a dlkrbd sudo
 
 # Copy the application folder inside the container
-RUN git clone https://github.com/mixfinancial/2Weeks.git
+RUN git clone https://github.com/RobertATX/BasicFlask_Docker.git
 
 # Setup all the config files
 run echo "daemon off;" >> /etc/nginx/nginx.conf
