@@ -12,5 +12,5 @@ selenium
 werkzeug
 coverage
 uwsgi
-#MySQL-Python
+mysqlclient
 #newrelic

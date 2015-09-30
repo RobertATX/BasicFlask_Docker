@@ -10,10 +10,9 @@ CSRF_ENABLED = True
 DEBUG = True
 DEVELOPMENT = True
 HOST = os.environ['HOST']
-NEW_RELIC_CONFIG_FILE = os.environ['NEW_RELIC_CONFIG_FILE']
+#NEW_RELIC_CONFIG_FILE = os.environ['NEW_RELIC_CONFIG_FILE']
 
 SECRET_KEY = os.environ['FLASK_AUTH_SECRET_KEY']
-
 
 ###################
 # DATABASE CONFIG #
