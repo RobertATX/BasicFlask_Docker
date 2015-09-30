@@ -43,7 +43,7 @@ def shutdown_session(exception=None):
 #######################
 from threading import Thread
 from flask.ext.mail import Mail, Message
-from .decorators import async
+from decorators import async
 
 app.config['MAIL_SERVER'] = config.MAIL_SERVER
 app.config['MAIL_PORT'] = config.MAIL_PORT
