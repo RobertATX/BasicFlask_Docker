@@ -1,9 +1,7 @@
-#!/usr/bin/env bash
-
 ############################################################
-# Dockerfile to build 2weeks App
+# Dockerfile
 # Based on Ubuntu
-# This is the Devlopement Build
+# This is the Dev Build
 ############################################################
 # Set the base image to Ubuntu
 FROM ubuntu:wily
@@ -13,51 +11,32 @@ FROM ubuntu:wily
 # File Author / Maintainer
 MAINTAINER Robert Donovan <admin@mixfin.com>
 
-# Update the sources list and Install basic applications
-RUN apt-get update
-RUN apt-get install -y build-essential git
+run apt-get update
+run apt-get install -y build-essential git
+run apt-get install -y python python-dev python-setuptools
+run apt-get install -y nginx supervisor
+run easy_install pip
 
-RUN apt-get install -y python python-dev python-setuptools
-RUN apt-get install -y nginx supervisor
-RUN easy_install pip
-
-
-##RUN apt-get install -y -o Dpkg::Options::="--force-confold" tar curl nano wget dialog nginx supervisor net-tools libxml2-dev libxslt1-dev
-
-# Install Python and Basic Python Tools
-RUN apt-get install -y -f python python-dev python-distribute python-pip python2.7-dev
-RUN apt-get install -y -f libmysqlclient-dev
-
-#Install webserver and Web server gateway
-RUN pip install uwsgi
+# install uwsgi now because it takes a little while
+run pip install uwsgi
 
 # install nginx
-#run apt-get install -y python-software-properties
-RUN apt-get install -y software-properties-common python-software-properties
-RUN add-apt-repository ppa:nginx/stable
-#RUN apt-get install mysql-client
+run apt-get install -y software-properties-common python-software-properties
+run apt-get update
+run add-apt-repository -y ppa:nginx/stable
+run apt-get install -y sqlite3
 
-# Set up DevUser
-RUN useradd dlkrbd -u 1000 -s /bin/bash --no-create-home
-RUN gpasswd -a dlkrbd sudo
+# install our code
+add . /home/docker/code/
 
-# Copy the application folder inside the container
-RUN git clone https://github.com/RobertATX/BasicFlask_Docker.git
-
-# Setup all the config files
+# setup all the configfiles
 run echo "daemon off;" >> /etc/nginx/nginx.conf
 run rm /etc/nginx/sites-enabled/default
-run ln -s /2Weeks/nginx-app.conf /etc/nginx/sites-enabled/
-run ln -s /2Weeks/supervisor-app.conf /etc/supervisor/conf.d/
+run ln -s /home/docker/code/nginx-app.conf /etc/nginx/sites-enabled/
+run ln -s /home/docker/code/supervisor-app.conf /etc/supervisor/conf.d/
 
-# Get pip to download and install requirements:
-RUN pip install -r /BasicFlask_Docker/requirements.txt
+# run pip install
+run pip install -r /home/docker/code/app/requirements.txt
 
-#Rerun the Update to resolve install issues
-#RUN apt-get update -f
-
-# Expose ports
-EXPOSE 80
-
-# Set the default command to execute when creating a new container
-CMD ["supervisord", "-n"]
+expose 80
+cmd ["supervisord", "-n"]
