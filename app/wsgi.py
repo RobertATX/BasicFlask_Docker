@@ -8,14 +8,14 @@ __author__ = 'Robert Donovan'
 from twoweeks import app
 import twoweeks.config as config
 
-app.run(debug=config.DEBUG, host=config.HOST)
+#app.run(debug=config.DEBUG, host=config.HOST)
 
-# @application.route('/', methods=['GET'])
-# def index():
-#    return 'Hello world!'
+ @application.route('/', methods=['GET'])
+ def index():
+    return 'Hello world!'
 
-# def test():
-#    application.run(debug=True)
+ def test():
+    application.run(debug=True)
 
-# if __name__ == '__main__':
-#    test()
+ if __name__ == '__main__':
+    test()
