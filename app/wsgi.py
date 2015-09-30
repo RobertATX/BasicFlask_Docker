@@ -7,8 +7,8 @@ from flask import Flask
 application = Flask(__name__)
 
 
-# from twoweeks import app
-# import twoweeks.config as config
+#from twoweeks import app
+#import twoweeks.config as config
 
 
 # app.run(debug=config.DEBUG, host=config.HOST)
