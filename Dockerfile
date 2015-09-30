@@ -13,7 +13,7 @@ MAINTAINER Robert Donovan <admin@mixfin.com>
 
 run apt-get update
 run apt-get install -y build-essential git
-run apt-get install -y python python-dev python-setuptools
+run apt-get install -y python python-dev python-setuptools libmysqlclient-dev
 run apt-get install -y nginx supervisor
 run easy_install pip
 
