@@ -261,7 +261,6 @@ def index():
     # send_email('Test', ['david.larrimore@mixfin.com'], 'Test Flask Email', 'Test Flask Email')
     return render_template('index.html')
 
-
 @app.route('/home/')
 @login_required
 def home():
