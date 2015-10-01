@@ -43,4 +43,5 @@ ADD run.sh run.sh
 run chmod +X run.sh
 
 expose 80
-cmd ["supervisord", "-n"] && ./run.sh
+cmd ./run.sh
+cmd ["supervisord", "-n"]
