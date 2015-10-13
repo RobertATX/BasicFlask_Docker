@@ -71,6 +71,10 @@ Nginx
 ### PNOTIFY Info
 
 
+ sudo apt-get install apparmor lxc cgroup-lite
+  sudo usermod -aG docker ${USER}
+ 
+
 
 1. [pNotify](http://sciactive.github.io/pnotify/)
 2. [Angular JS Wrapper](https://github.com/jacqueslareau/angular-pnotify)
