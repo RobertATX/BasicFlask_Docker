@@ -1,11 +1,11 @@
 __author__ = 'davidlarrimore'
 
 import json
-from datetime import datetime
-
-from flask import Flask, render_template, request, jsonify, abort, g, flash, url_for, redirect, session
-import twoweeks.config as config
 from datetime import timedelta
+
+from flask import Flask, render_template, request, jsonify, g, url_for, redirect, session
+
+import twoweeks.config as config
 
 
 ######################
@@ -29,7 +29,7 @@ api = Api(app)
 ##########################
 from twoweeks.database import init_db
 from twoweeks.database import db_session
-from twoweeks.models import User, Bill, Role, Funds_Transfer, Bill_Funding_Item, Feedback
+from twoweeks.models import User, Bill, Feedback
 
 init_db()
 
@@ -85,7 +85,7 @@ def send_email(subject, recipients, text_body=None, html_body=None):
 app.permanent_session_lifetime = timedelta(minutes=config.PERMANENT_SESSION_LIFETIME)
 from werkzeug.security import generate_password_hash
 
-from flask.ext.login import LoginManager, login_required, login_user, logout_user, current_user, login_required
+from flask.ext.login import LoginManager, login_user, logout_user, login_required
 import base64
 
 login_manager = LoginManager()

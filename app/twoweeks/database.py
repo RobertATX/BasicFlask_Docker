@@ -15,7 +15,6 @@ Base = declarative_base()
 Base.query = db_session.query_property()
 
 
-
 def init_db():
     # import all modules here that might define models so that
     # they will be registered properly on the metadata.  Otherwise
