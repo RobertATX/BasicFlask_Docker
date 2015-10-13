@@ -42,6 +42,8 @@ MAINTAINER Robert Donovan <admin@mixfin.com>
 #run pip install -r /home/docker/code/app/requirements.txt
 run pip install -r requirements.txt
 
+run apt-get update
+
 #ADD run.sh run.sh
 
 #run chmod +X run.sh
