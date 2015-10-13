@@ -28,7 +28,7 @@ node_modules
 
 # PyCharm
 .idea/
-
+.env
 twoweeks.log
 
 run.sh
