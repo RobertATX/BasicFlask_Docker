@@ -1,6 +1,6 @@
 web:
   restart: always
-  build: ./web
+  build: ./app
   expose:
     - "8000"
   links:
