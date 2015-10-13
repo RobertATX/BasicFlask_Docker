@@ -40,7 +40,7 @@ MAINTAINER Robert Donovan <admin@mixfin.com>
 
 # run pip install
 #run pip install -r /home/docker/code/app/requirements.txt
-#run pip install -r /app/requirements.txt
+run pip install -r requirements.txt
 
 #ADD run.sh run.sh
 
