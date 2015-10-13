@@ -28,6 +28,8 @@ api = Api(app)
 # DATABASE CONFIGURATION #
 ##########################
 from twoweeks.database import init_db
+
+from twoweeks.database import init_db
 from twoweeks.database import db_session
 from twoweeks.models import User, Bill, Feedback
 
