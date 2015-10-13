@@ -8,4 +8,4 @@ RUN rm /etc/nginx/conf.d/default.conf
 
 ADD sites-enabled/ /etc/nginx/sites-enabled
 
-COPY nginx-app.conf /etc/nginx
+COPY conf /etc/nginx
