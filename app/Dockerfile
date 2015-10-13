@@ -18,6 +18,8 @@ MAINTAINER Robert Donovan <admin@mixfin.com>
 #run apt-get install -y nginx supervisor
 #run easy_install pip
 
+#env PATH /path/to/bin/folder:$PATH
+
 # install uwsgi now because it takes a little while
 #run pip install uwsgi
 
@@ -37,7 +39,8 @@ MAINTAINER Robert Donovan <admin@mixfin.com>
 #run ln -s /home/docker/code/supervisor-app.conf /etc/supervisor/conf.d/
 
 # run pip install
-run pip install -r /home/docker/code/app/requirements.txt
+#run pip install -r /home/docker/code/app/requirements.txt
+run pip install -r /app/requirements.txt
 
 #ADD run.sh run.sh
 
