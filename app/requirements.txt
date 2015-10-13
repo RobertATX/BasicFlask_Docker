@@ -12,6 +12,6 @@ pylint
 selenium
 werkzeug
 coverage
-uwsgi
+#uwsgi
 mysqlclient
 #newrelic

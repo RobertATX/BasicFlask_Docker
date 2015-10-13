@@ -20,9 +20,6 @@ MAINTAINER Robert Donovan <admin@mixfin.com>
 
 #env PATH /path/to/bin/folder:$PATH
 
-# install uwsgi now because it takes a little while
-#run pip install uwsgi
-
 # install nginx
 #run apt-get install -y software-properties-common python-software-properties
 #run apt-get update
